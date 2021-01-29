@@ -16,8 +16,10 @@ body {
     color: $grayishblue;
     font-weight: 300;
 }
-a,a:visited,a:hover{
-text-decoration: none;
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
 }
 
 //flexbox
@@ -37,15 +39,27 @@ text-decoration: none;
     }
 }
 
-
 //buttons
 
-button, .button{
-    padding: 1rem 1.8rem;
+button,
+.button {
+    padding: 0.875rem 2.875rem;
     border-radius: 3rem;
     cursor: pointer;
     color: $white;
     font-weight: 400;
-    background: linear-gradient(to right , $limeGreen ,$brightCyan);
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
     border: none;
+}
+
+//visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none !important;
+    }
+}
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none !important;
+    }
 }
