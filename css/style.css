@@ -100,15 +100,44 @@ button,
 }
 
 .header__links > a {
+  position: relative;
   color: #9698a6;
   font-size: 0.875;
+  -webkit-transition: color 300ms ease;
+  transition: color 300ms ease;
 }
 
 .header__links > a:not(:last-child) {
   margin-right: 32px;
 }
 
+.header__links > a:hover {
+  color: #2d314d;
+}
+
+.header__links > a:hover::before {
+  opacity: 1;
+}
+
+.header__links > a::before {
+  content: "";
+  border-radius: 2.5rem;
+  bottom: -39px;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+  background: linear-gradient(to right, #31d35c, #2bb7da);
+  width: 100%;
+  height: 3px;
+  opacity: 0;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
 .header a.button {
   display: block;
+}
+
+.header a.button:hover {
+  opacity: .75;
 }
 /*# sourceMappingURL=style.css.map */
